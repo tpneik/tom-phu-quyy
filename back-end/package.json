@@ -1,0 +1,19 @@
+{
+  "name": "web_basic_nodejs",
+  "version": "1.0.0",
+  "description": "This is learning web app nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "kienpt",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-hbs": "^2.5.0"
+  }
+}
