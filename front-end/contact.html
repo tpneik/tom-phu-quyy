@@ -121,30 +121,30 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                             <label for="name">Họ và tên</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                                             <label for="email">Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
                                             <label for="subject">Chủ đề</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
                                             <label for="message">Nội dung</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" id = "contact_btn" type="submit">Gửi</button>
+                                        <button class="btn btn-primary w-100 py-3" id="btn" type="submit">Gửi</button>
                                     </div>
                                 </div>
                             </form>
@@ -208,7 +208,7 @@
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Quay lại trang chủ</a>
+                                <a href="index.html">Quay lại trang chủ</a>
                             </div>
                         </div>
                     </div>
@@ -249,8 +249,38 @@
             urlObject.searchParams.set("subject", subject);
             urlObject.searchParams.set("messsageCT", messageContact);
             fetch(urlObject.toString());
-            alert("Đã nhận được thông tin của bạn");
         });
+    </script>
+    <script>
+        function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        return emailRegex.test(email);
+        }
+        document.getElementById('btn').addEventListener('click', function() {
+            const userName = document.getElementById('name').value;
+            const userEmail = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const messageContact = document.getElementById('message').value;
+            if (!isValidEmail(userEmail) || userName === '' || userEmail === '' || subject === '' || messageContact === '') {
+                showToastNotification('Vui lòng điền đầy đủ thông tin');
+            } else {
+                showToastNotification('Bạn đã đặt hàng thành công');
+            }
+        });
+        function showToastNotification(message) {
+            let toastContainer = document.getElementById('toast-container');
+            if (!toastContainer) {
+                toastContainer = document.createElement('div');
+                toastContainer.id = 'toast-container';
+                document.body.appendChild(toastContainer);
+            }
+            toastContainer.textContent = message;
+            toastContainer.style.display = 'block';
+            setTimeout(function() {
+                toastContainer.style.display = 'none';
+            }, 2000);
+        }
     </script>
 </body>
 
