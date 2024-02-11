@@ -491,13 +491,3 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: none;
 }
-
-.hidden {
-    display: none;
-}
-  
-#error-message {
-    color: #ea2525; /* Red color for error message */
-    font-size: 14px;
-    margin-top: 5px;
-}
