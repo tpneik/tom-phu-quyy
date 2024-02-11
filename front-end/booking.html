@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Restoran - Bootstrap Restaurant Template</title>
+    <title>Tôm Phú Quý - Minh Nguyệt Foods</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/favicon.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,7 +99,7 @@
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Đặt hàng online</h5>
                         <h1 class="text-white mb-4">Đặt sản phẩm online ngay</h1>
-                        <form>
+                        <form id = "user_booking">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -114,37 +114,29 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Thời gian</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="phone-number" placeholder="Your Phone Number">
+                                        <label for="phone-number">Số điện thoại</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="select1">
-                                          <option value="1">1</option>
-                                          <option value="2">2</option>
-                                          <option value="3">3</option>
-                                          <option value="1">4</option>
-                                          <option value="2">5</option>
-                                          <option value="3">6</option>
-                                          <option value="1">7</option>
-                                          <option value="2">8</option>
-                                          <option value="3">9</option>
-                                          <option value="1">10</option>
-                                        </select>
-                                        <label for="select1">Số lượng sản phẩm</label>
-                                      </div>
+                                        <input type="text" class="form-control" id="quantity" placeholder="Quantity">
+                                        <label for="quantity">Số lượng sản phẩm</label>
+                                    </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Yêu cầu của bạn</label>
+                                        <label for="message">Tên sản phẩm và địa chỉ của bạn</label>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div>
                                     <button class="btn btn-primary w-100 py-3" type="submit">Đặt ngay</button>
                                 </div>
+                                <!-- <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Đặt ngay</button>
+                                </div> -->
                             </div>
                         </form>
                     </div>
@@ -251,6 +243,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
